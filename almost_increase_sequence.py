@@ -12,7 +12,12 @@ class AlmostIncreaseSequence(unittest.TestCase):
 
         self.assertEqual(actual, expected)
         
-def almostIncreaseSequence(list_of_number):
+def almostIncreaseSequence(number):
+        for i, x in enumerate(number):
+            s = number[:i]
+            s.extend(number[i+1:])
+            if s == sorted(set(s)):
+                return True
         return False
     
 
